@@ -91,6 +91,7 @@ body main {
   justify-content: center;
   align-items: center;
   padding: 2.5em 0;
+  width: 100%;
 }
 body main aside {
   display: flex;
@@ -146,6 +147,7 @@ body main .main-container {
   justify-content: center;
   align-items: center;
   padding: 1.2em 0;
+  width: inherit;
 }
 body main .main-container .collapse-item {
   width: 94%;
