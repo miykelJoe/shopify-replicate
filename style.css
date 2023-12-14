@@ -358,12 +358,11 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
     align-items: center;
     padding: 2.5em 0;
     width: 60%;
-    border: 1px solid red;
   }
   body main aside {
     background-color: var(--bgprimary);
     width: 100%;
-    padding: 1.2em 0;
+    padding: 1.5em 0;
     border-radius: 0.8rem;
   }
   body main aside .aside-container {
@@ -377,13 +376,13 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
     gap: 0em;
   }
   body main aside .aside-container p {
-    font-size: clamp(1.2rem, 2vw, 2.2rem);
+    font-size: clamp(0.8rem, 1.2vw, 1.6rem);
     width: 75%;
     line-height: 1.6em;
   }
   body main aside .aside-container button.select {
-    font-size: clamp(1.1rem, 1.7vw, 2.2rem);
-    padding: 0.7em 1em;
+    font-size: clamp(0.81rem, 1vw, 1.2rem);
+    padding: 0.8em 1em;
     border-radius: 0.8em;
     font-weight: 600;
     cursor: pointer;
@@ -404,6 +403,7 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
     align-items: center;
     padding: 1.2em 0;
     width: 100%;
+    border-radius: 1.8em;
   }
   body main .main-container .collapse-item {
     width: 96%;
@@ -415,13 +415,20 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
     font-size: 1.5rem;
     position: relative;
     margin-bottom: 2em;
-    gap: 0.4em;
+  }
+  body main .main-container .collapse-item b,
+  body main .main-container .collapse-item span {
+    line-height: 1.5em;
+    font-size: clamp(1.6rem, 1.3vw, 2.4rem);
   }
   body main .main-container .collapse-item .collapsible-trigger:hover {
     background-color: #f1f1f1;
   }
+  body main .main-container .options ul .steps {
+    padding: 2em 1.4em;
+  }
   body main .main-container .options ul .steps b.title {
-    font-size: clamp(1.8rem, 2vw, 2.4rem);
+    font-size: clamp(1rem, 1.6vw, 1.8rem);
   }
   body main .main-container .options ul .steps .para-btn p {
     color: #616161;
@@ -482,7 +489,8 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
     transition: 0.2s;
   }
   body main .main-container .options ul .active b.title {
-    font-size: clamp(1.6rem, 2vw, 2.4rem);
+    font-size: clamp(0.8rem, 1.3vw, 1.76rem);
+    font-weight: 700;
   }
   body main .main-container .options ul .active .para-btn {
     display: flex;
@@ -493,7 +501,7 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
   }
   body main .main-container .options ul .active .para-btn p {
     color: #616161;
-    font-size: clamp(1.6rem, 2vw, 2.4rem);
+    font-size: clamp(1rem, 1.2vw, 1.6rem);
     width: 70%;
     line-height: 1.7em;
     font-weight: 500;
