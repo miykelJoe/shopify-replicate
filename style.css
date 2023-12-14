@@ -12,6 +12,8 @@ html {
 
 :root {
   --bgprimary: #1A1A1A;
+  --text-color: #616161;
+  --input-bgcolor: #303030;
 }
 
 body {
@@ -40,19 +42,24 @@ body nav .nav-container {
 body nav .nav-container .logo {
   width: 15%;
 }
-body nav .nav-container .logo svg {
-  width: 2.5em;
+body nav .nav-container .logo .header__navbar__logo.phone__logo {
+  display: block;
+  width: 2.7em;
+}
+body nav .nav-container .logo .header__navbar__logo.pc__logo {
+  display: none;
 }
 body nav .nav-container .input-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #303030;
+  background-color: var(--input-bgcolor);
   border: 1px solid #616161;
   border-radius: 1rem;
   padding: 0.4em 0;
   gap: 1em;
   transition: 0.2s;
+  width: 50%;
 }
 body nav .nav-container .input-container .search {
   width: 1.5em;
@@ -63,6 +70,7 @@ body nav .nav-container .input-container input {
   border: none;
   outline: none;
   color: #B5B5B5;
+  width: 60%;
 }
 body nav .nav-container .input-container:hover {
   border-color: white;
@@ -84,6 +92,10 @@ body nav .nav-container .notification-profile-icon .profile {
   font-size: 1.4rem;
   padding: 0.6em 0.3em;
   border-radius: 0.3em;
+  color: var(--text-color);
+}
+body nav .nav-container .notification-profile-icon .profile.pc {
+  display: none;
 }
 body main {
   display: flex;
@@ -160,6 +172,10 @@ body main .main-container .collapse-item {
   position: relative;
   margin-bottom: 2em;
 }
+body main .main-container .collapse-item b,
+body main .main-container .collapse-item span {
+  font-size: clamp(1.5rem, 2.2vw, 2.6rem);
+}
 body main .main-container .collapse-item .collapsible-trigger {
   width: 1.2em;
   position: absolute;
@@ -177,7 +193,7 @@ body main .main-container .options {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 94%;
+  width: 96%;
 }
 body main .main-container .options ul {
   display: flex;
@@ -186,19 +202,15 @@ body main .main-container .options ul {
   justify-content: center;
 }
 body main .main-container .options ul .steps {
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  list-style: none;
   padding: 2em 1.4em;
   border-radius: 0.8em;
   cursor: pointer;
   row-gap: 2em;
-  transition: 0.2s;
+  transition: 0.5s;
 }
 body main .main-container .options ul .steps b.title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 body main .main-container .options ul .steps .para-btn {
   display: none;
@@ -206,53 +218,6 @@ body main .main-container .options ul .steps .para-btn {
   justify-content: center;
   align-items: inherit;
   row-gap: inherit;
-}
-body main .main-container .options ul .steps .para-btn p {
-  color: #616161;
-  font-size: 1.3rem;
-  width: 70%;
-  line-height: 1.7em;
-  font-weight: 500;
-}
-body main .main-container .options ul .steps .para-btn p a {
-  text-decoration: none;
-  color: #005BD3;
-}
-body main .main-container .options ul .steps .para-btn .step-btn {
-  font-size: 1.2rem;
-  font-weight: 600;
-  background-color: #404040;
-  color: white;
-  border: none;
-  border-radius: 0.6em;
-  padding: 0.5em 0.8em;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
-}
-body main .main-container .options ul .steps .para-btn .step-btn:hover {
-  background-color: #2a2a2a;
-}
-body main .main-container .options ul .steps .para-btn .btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 0.7em;
-       column-gap: 0.7em;
-}
-body main .main-container .options ul .steps .para-btn .btn-container .btn {
-  font-size: 1.2rem;
-  font-weight: 600;
-  background-color: transparent;
-  color: #404040;
-  border: 1px solid transparent;
-  border-radius: 0.6em;
-  padding: 0.5em 0.8em;
-  cursor: pointer;
-}
-body main .main-container .options ul .steps .para-btn .btn-container .btn:hover {
-  background-color: #E7E7E7;
-  outline: 0.15em solid #2B2B2B;
-  transition: 100ms ease-in-out;
 }
 body main .main-container .options ul .active {
   background-color: #f1f1f1;
@@ -322,4 +287,254 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
   background-color: #E7E7E7;
   outline: 0.15em solid #2B2B2B;
   transition: 100ms ease-in-out;
+}
+
+@media (min-width: 600px) {
+  body nav .nav-container .logo {
+    width: 25%;
+  }
+  body nav .nav-container .logo .header__navbar__logo.phone__logo {
+    display: none;
+  }
+  body nav .nav-container .logo .header__navbar__logo.pc__logo {
+    display: block;
+    width: 10em;
+  }
+  body nav .nav-container .input-container {
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--input-bgcolor);
+    border: 1px solid #616161;
+    border-radius: 1rem;
+    padding: 0.9em 0;
+    gap: 1em;
+    transition: 0.2s;
+  }
+  body nav .nav-container .input-container .search {
+    width: 1.8em;
+    margin: 0 0 0 1em;
+  }
+  body nav .nav-container .input-container input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #B5B5B5;
+    font-size: clamp(1.4rem, 2vw, 2.5rem);
+  }
+  body nav .nav-container .input-container:hover {
+    border-color: white;
+  }
+  body nav .nav-container .notification-profile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+    width: 25%;
+  }
+  body nav .nav-container .notification-profile-icon .bell {
+    width: 2em;
+  }
+  body nav .nav-container .notification-profile-icon .profile.phone {
+    display: none;
+  }
+  body nav .nav-container .notification-profile-icon .profile.pc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--input-bgcolor);
+    background-color: var(--input-bgcolor);
+    font-size: clamp(1.4rem, 2vw, 2.5rem);
+    padding: 0.6em 0.3em;
+    border-radius: 0.3em;
+    color: #fff;
+  }
+  body main aside {
+    background-color: var(--bgprimary);
+    width: 100%;
+    padding: 1.5em 0;
+  }
+  body main aside .aside-container {
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: #e3e3e3;
+    position: relative;
+    gap: 0em;
+  }
+  body main aside .aside-container p {
+    font-size: clamp(1.4rem, 2.2vw, 2.6rem);
+    width: 75%;
+    line-height: 1.6em;
+  }
+  body main aside .aside-container button.select {
+    font-size: clamp(1.1rem, 1.7vw, 2.2rem);
+    padding: 0.7em 1em;
+    border-radius: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: white;
+    transition: 0.2s;
+    box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+  }
+  body main aside .aside-container button.select:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-0.1rem);
+  }
+  body main .main-container {
+    background-color: white;
+    margin: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2em 0;
+    width: inherit;
+  }
+  body main .main-container .collapse-item {
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.2em;
+    font-size: 1.5rem;
+    position: relative;
+    margin-bottom: 2em;
+    gap: 0.4em;
+  }
+  body main .main-container .collapse-item .collapsible-trigger:hover {
+    background-color: #f1f1f1;
+  }
+  body main .main-container .options ul .steps b.title {
+    font-size: clamp(1.8rem, 2vw, 2.4rem);
+  }
+  body main .main-container .options ul .steps .para-btn p {
+    color: #616161;
+    width: 70%;
+    line-height: 1.7em;
+    font-weight: 500;
+  }
+  body main .main-container .options ul .steps .para-btn p a {
+    text-decoration: none;
+    color: #005BD3;
+  }
+  body main .main-container .options ul .steps .para-btn .step-btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #404040;
+    color: white;
+    border: none;
+    border-radius: 0.6em;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
+  }
+  body main .main-container .options ul .steps .para-btn .step-btn:hover {
+    background-color: #2a2a2a;
+  }
+  body main .main-container .options ul .steps .para-btn .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 0.7em;
+         column-gap: 0.7em;
+  }
+  body main .main-container .options ul .steps .para-btn .btn-container .btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: transparent;
+    color: #404040;
+    border: 1px solid transparent;
+    border-radius: 0.6em;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+  }
+  body main .main-container .options ul .steps .para-btn .btn-container .btn:hover {
+    background-color: #E7E7E7;
+    outline: 0.15em solid #2B2B2B;
+    transition: 100ms ease-in-out;
+  }
+  body main .main-container .options ul .active {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em 1.4em;
+    border-radius: 0.8em;
+    cursor: pointer;
+    row-gap: 2em;
+    transition: 0.2s;
+  }
+  body main .main-container .options ul .active b.title {
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+  }
+  body main .main-container .options ul .active .para-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: inherit;
+    row-gap: inherit;
+  }
+  body main .main-container .options ul .active .para-btn p {
+    color: #616161;
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+    width: 70%;
+    line-height: 1.7em;
+    font-weight: 500;
+  }
+  body main .main-container .options ul .active .para-btn p a {
+    text-decoration: none;
+    color: #005BD3;
+  }
+  body main .main-container .options ul .active .para-btn .step-btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #404040;
+    color: white;
+    border: none;
+    border-radius: 0.6em;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
+  }
+  body main .main-container .options ul .active .para-btn .step-btn:hover {
+    background-color: #2a2a2a;
+  }
+  body main .main-container .options ul .active .para-btn .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 0.7em;
+         column-gap: 0.7em;
+  }
+  body main .main-container .options ul .active .para-btn .btn-container .btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: transparent;
+    color: #404040;
+    border: 1px solid transparent;
+    border-radius: 0.6em;
+    padding: 0.5em 0.8em;
+    cursor: pointer;
+  }
+  body main .main-container .options ul .active .para-btn .btn-container .btn:hover {
+    background-color: #E7E7E7;
+    outline: 0.15em solid #2B2B2B;
+    transition: 100ms ease-in-out;
+  }
+}
+.hide .arrow-down {
+  display: none;
+}
+.hide .arrow-up {
+  display: block;
+}
+.hide .options {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -12,6 +12,8 @@ html {
 
 :root {
     --bgprimary: #1A1A1A;
+    --text-color: #616161;
+    --input-bgcolor: #303030;
 }
 
 body {
@@ -40,21 +42,28 @@ body {
             .logo {
                 width: 15%;
 
-                svg {
-                    width: 2.5em;
+                .header__navbar__logo.phone__logo {
+                    display: block;
+                    width: 2.7em;
+                }
+
+                .header__navbar__logo.pc__logo {
+                    display: none;
                 }
             }
 
             .input-container {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
-                background-color: #303030;
+                background-color: var(--input-bgcolor);
                 border: 1px solid #616161;
                 border-radius: 1rem;
                 padding: .4em 0;
                 gap: 1em;
                 transition: .2s;
+                width: 50%;
+
 
                 .search {
                     width: 1.5em;
@@ -66,6 +75,7 @@ body {
                     border: none;
                     outline: none;
                     color: #B5B5B5;
+                    width: 60%;
                 }
             }
 
@@ -90,6 +100,11 @@ body {
                     font-size: 1.4rem;
                     padding: .6em .3em;
                     border-radius: .3em;
+                    color: var(--text-color);
+                }
+
+                .profile.pc {
+                    display: none;
                 }
             }
         }
@@ -178,9 +193,10 @@ body {
                 position: relative;
                 margin-bottom: 2em;
 
-                b {}
-
-                span {}
+                b,
+                span {
+                    font-size: clamp(1.5rem, 2.2vw, 2.6rem);
+                }
 
                 .collapsible-trigger {
                     width: 1.2em;
@@ -202,7 +218,7 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 94%;
+                width: 96%;
 
                 ul {
                     display: flex;
@@ -211,19 +227,15 @@ body {
                     justify-content: center;
 
                     .steps {
-                        background-color: transparent;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: flex-start;
+                        list-style: none;
                         padding: 2em 1.4em;
                         border-radius: .8em;
                         cursor: pointer;
                         row-gap: 2em;
-                        transition: .2s;
+                        transition: .5s;
 
                         b.title {
-                            font-size: 1.3rem;
+                            font-size: 1.5rem;
                         }
 
                         .para-btn {
@@ -232,66 +244,10 @@ body {
                             justify-content: center;
                             align-items: inherit;
                             row-gap: inherit;
-
-
-                            p {
-                                color: #616161;
-                                font-size: 1.3rem;
-                                width: 70%;
-                                line-height: 1.7em;
-                                font-weight: 500;
-
-                                a {
-                                    text-decoration: none;
-                                    color: #005BD3;
-                                }
-                            }
-
-                            .step-btn {
-                                font-size: 1.2rem;
-                                font-weight: 600;
-                                background-color: #404040;
-                                color: white;
-                                border: none;
-                                border-radius: .6em;
-                                padding: .5em .8em;
-                                cursor: pointer;
-                                box-shadow: 0px 0px 0px 1.5px #333,
-                                    0px 1px 0px 1.5px #333,
-                                    0px 2px 0px 0px #000;
-                            }
-
-                            .step-btn:hover {
-                                background-color: #2a2a2a;
-                            }
-
-                            .btn-container {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                column-gap: .7em;
-
-                                .btn {
-                                    font-size: 1.2rem;
-                                    font-weight: 600;
-                                    background-color: transparent;
-                                    color: #404040;
-                                    border: 1px solid transparent;
-                                    border-radius: .6em;
-                                    padding: .5em .8em;
-                                    cursor: pointer;
-                                }
-
-                                .btn:hover {
-                                    background-color: #E7E7E7;
-                                    outline: .15em solid #2B2B2B;
-                                    transition: 100ms ease-in-out;
-                                }
-                            }
                         }
                     }
 
-                    .active{
+                    .active {
                         background-color: #f1f1f1;
                         display: flex;
                         flex-direction: column;
@@ -304,7 +260,7 @@ body {
                         transition: .2s;
 
 
-                       b.title {
+                        b.title {
                             font-size: 1.3rem;
                         }
 
@@ -376,5 +332,327 @@ body {
             }
 
         }
+    }
+}
+
+@media (min-width: 600px) {
+
+    body {
+        nav {
+            .nav-container {
+                .logo {
+                    width: 25%;
+
+                    .header__navbar__logo.phone__logo {
+                        display: none;
+                    }
+
+                    .header__navbar__logo.pc__logo {
+                        display: block;
+                        width: 10em;
+                    }
+                }
+
+                .input-container {
+                    width: 45%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    background-color: var(--input-bgcolor);
+                    border: 1px solid #616161;
+                    border-radius: 1rem;
+                    padding: .9em 0;
+                    gap: 1em;
+                    transition: .2s;
+
+                    .search {
+                        width: 1.8em;
+                        margin: 0 0 0 1em;
+                    }
+
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        color: #B5B5B5;
+                        font-size: clamp(1.4rem, 2vw, 2.5rem);
+                    }
+                }
+
+                .input-container:hover {
+                    border-color: white;
+                }
+
+                .notification-profile-icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    column-gap: 2em;
+                    width: 25%;
+
+                    .bell {
+                        width: 2em;
+                    }
+
+                    .profile.phone {
+                        display: none;
+                    }
+
+                    .profile.pc {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid var(--input-bgcolor);
+                        background-color: var(--input-bgcolor);
+                        font-size: clamp(1.4rem, 2vw, 2.5rem);
+                        padding: .6em .3em;
+                        border-radius: .3em;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+
+        main {
+
+            aside {
+                background-color: var(--bgprimary);
+                width: 100%;
+                padding: 1.5em 0;
+
+
+                .aside-container {
+                    width: 96%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    color: #e3e3e3;
+                    position: relative;
+                    gap: 0em;
+
+                    p {
+                        font-size: clamp(1.4rem, 2.2vw, 2.6rem);
+                        width: 75%;
+                        line-height: 1.6em;
+                    }
+
+                    button.select {
+                        font-size: clamp(1.1rem, 1.7vw, 2.2rem);
+                        padding: .7em 1em;
+                        border-radius: .8em;
+                        font-weight: 600;
+                        cursor: pointer;
+                        background-color: white;
+                        transition: .2s;
+                        box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+                    }
+
+                    button.select:hover {
+                        background-color: #f1f1f1;
+                        transform: translateY(-0.1rem);
+                    }
+
+                    .close-cont {}
+                }
+            }
+
+            .main-container {
+                background-color: white;
+                margin: 1.5em 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1.2em 0;
+                width: inherit;
+
+                .collapse-item {
+                    width: 96%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    line-height: 1.2em;
+                    font-size: 1.5rem;
+                    position: relative;
+                    margin-bottom: 2em;
+                    gap: .4em;
+
+                    .collapsible-trigger {}
+
+                    .collapsible-trigger:hover {
+                        background-color: #f1f1f1;
+                    }
+                }
+
+                .options {
+                    
+                    ul {
+                        .steps {
+
+                            b.title {
+                                font-size: clamp(1.8rem, 2vw, 2.4rem);
+                            }
+
+                            .para-btn {
+                                p {
+                                    color: #616161;
+                                    
+                                    width: 70%;
+                                    line-height: 1.7em;
+                                    font-weight: 500;
+
+                                    a {
+                                        text-decoration: none;
+                                        color: #005BD3;
+                                    }
+                                }
+
+                                .step-btn {
+                                    font-size: 1.2rem;
+                                    font-weight: 600;
+                                    background-color: #404040;
+                                    color: white;
+                                    border: none;
+                                    border-radius: .6em;
+                                    padding: .5em .8em;
+                                    cursor: pointer;
+                                    box-shadow: 0px 0px 0px 1.5px #333,
+                                        0px 1px 0px 1.5px #333,
+                                        0px 2px 0px 0px #000;
+                                }
+
+                                .step-btn:hover {
+                                    background-color: #2a2a2a;
+                                }
+
+                                .btn-container {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    column-gap: .7em;
+
+                                    .btn {
+                                        font-size: 1.2rem;
+                                        font-weight: 600;
+                                        background-color: transparent;
+                                        color: #404040;
+                                        border: 1px solid transparent;
+                                        border-radius: .6em;
+                                        padding: .5em .8em;
+                                        cursor: pointer;
+                                    }
+
+                                    .btn:hover {
+                                        background-color: #E7E7E7;
+                                        outline: .15em solid #2B2B2B;
+                                        transition: 100ms ease-in-out;
+                                    }
+                                }
+                            }
+                        }
+
+                        .active {
+                            background-color: #f1f1f1;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                            padding: 2em 1.4em;
+                            border-radius: .8em;
+                            cursor: pointer;
+                            row-gap: 2em;
+                            transition: .2s;
+
+
+                            b.title {
+                                font-size: clamp(1.6rem, 2vw, 2.4rem);
+                            }
+
+                            .para-btn {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: inherit;
+                                row-gap: inherit;
+
+
+                                p {
+                                    color: #616161;
+                                    font-size: clamp(1.6rem, 2vw, 2.4rem);
+                                    width: 70%;
+                                    line-height: 1.7em;
+                                    font-weight: 500;
+
+                                    a {
+                                        text-decoration: none;
+                                        color: #005BD3;
+                                    }
+                                }
+
+                                .step-btn {
+                                    font-size: 1.2rem;
+                                    font-weight: 600;
+                                    background-color: #404040;
+                                    color: white;
+                                    border: none;
+                                    border-radius: .6em;
+                                    padding: .5em .8em;
+                                    cursor: pointer;
+                                    box-shadow: 0px 0px 0px 1.5px #333,
+                                        0px 1px 0px 1.5px #333,
+                                        0px 2px 0px 0px #000;
+                                }
+
+                                .step-btn:hover {
+                                    background-color: #2a2a2a;
+                                }
+
+                                .btn-container {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    column-gap: .7em;
+
+                                    .btn {
+                                        font-size: 1.2rem;
+                                        font-weight: 600;
+                                        background-color: transparent;
+                                        color: #404040;
+                                        border: 1px solid transparent;
+                                        border-radius: .6em;
+                                        padding: .5em .8em;
+                                        cursor: pointer;
+                                    }
+
+                                    .btn:hover {
+                                        background-color: #E7E7E7;
+                                        outline: .15em solid #2B2B2B;
+                                        transition: 100ms ease-in-out;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.hide {
+    .arrow-down {
+        display: none;
+    }
+
+    .arrow-up {
+        display: block;
+    }
+
+    .options {
+        display: none;
     }
 }
