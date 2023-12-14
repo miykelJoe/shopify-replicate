@@ -206,77 +206,169 @@ body {
 
                 ul {
                     display: flex;
+                    width: 100%;
                     flex-direction: column;
                     justify-content: center;
-                    row-gap: 2em;
 
                     .steps {
+                        background-color: transparent;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        padding: 2em 1.4em;
+                        border-radius: .8em;
+                        cursor: pointer;
+                        row-gap: 2em;
+                        transition: .2s;
+
+                        b.title {
+                            font-size: 1.3rem;
+                        }
+
+                        .para-btn {
+                            display: none;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: inherit;
+                            row-gap: inherit;
+
+
+                            p {
+                                color: #616161;
+                                font-size: 1.3rem;
+                                width: 70%;
+                                line-height: 1.7em;
+                                font-weight: 500;
+
+                                a {
+                                    text-decoration: none;
+                                    color: #005BD3;
+                                }
+                            }
+
+                            .step-btn {
+                                font-size: 1.2rem;
+                                font-weight: 600;
+                                background-color: #404040;
+                                color: white;
+                                border: none;
+                                border-radius: .6em;
+                                padding: .5em .8em;
+                                cursor: pointer;
+                                box-shadow: 0px 0px 0px 1.5px #333,
+                                    0px 1px 0px 1.5px #333,
+                                    0px 2px 0px 0px #000;
+                            }
+
+                            .step-btn:hover {
+                                background-color: #2a2a2a;
+                            }
+
+                            .btn-container {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                column-gap: .7em;
+
+                                .btn {
+                                    font-size: 1.2rem;
+                                    font-weight: 600;
+                                    background-color: transparent;
+                                    color: #404040;
+                                    border: 1px solid transparent;
+                                    border-radius: .6em;
+                                    padding: .5em .8em;
+                                    cursor: pointer;
+                                }
+
+                                .btn:hover {
+                                    background-color: #E7E7E7;
+                                    outline: .15em solid #2B2B2B;
+                                    transition: 100ms ease-in-out;
+                                }
+                            }
+                        }
+                    }
+
+                    .active{
                         background-color: #f1f1f1;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: flex-start;
-                        row-gap: 2em;
                         padding: 2em 1.4em;
                         border-radius: .8em;
+                        cursor: pointer;
+                        row-gap: 2em;
+                        transition: .2s;
 
 
-                        b {
+                       b.title {
                             font-size: 1.3rem;
                         }
 
-                        p {
-                            color: #616161;
-                            font-size: 1.3rem;
-                            width: 70%;
-                            line-height: 1.7em;
-                            font-weight: 500;
-
-                            a {
-                                text-decoration: none;
-                                color: #005BD3;
-                            }
-                        }
-
-                        .step-btn {
-                            font-size: 1.2rem;
-                            font-weight: 600;
-                            background-color: #404040;
-                            color: white;
-                            border: none;
-                            border-radius: .6em;
-                            padding: .5em .8em;
-                            cursor: pointer;
-                            box-shadow: 0px 0px 0px 1.5px #333,
-                                0px 1px 0px 1.5px #333,
-                                0px 2px 0px 0px #000;
-                        }
-
-                        .step-btn:hover {
-                            background-color: #2a2a2a;
-                        }
-
-                        .btn-container {
+                        .para-btn {
                             display: flex;
+                            flex-direction: column;
                             justify-content: center;
-                            align-items: center;
-                            column-gap: .7em;
+                            align-items: inherit;
+                            row-gap: inherit;
 
-                            .btn {
+
+                            p {
+                                color: #616161;
+                                font-size: 1.3rem;
+                                width: 70%;
+                                line-height: 1.7em;
+                                font-weight: 500;
+
+                                a {
+                                    text-decoration: none;
+                                    color: #005BD3;
+                                }
+                            }
+
+                            .step-btn {
                                 font-size: 1.2rem;
                                 font-weight: 600;
-                                background-color: transparent;
-                                color: #404040;
-                                border: 1px solid transparent;
+                                background-color: #404040;
+                                color: white;
+                                border: none;
                                 border-radius: .6em;
                                 padding: .5em .8em;
                                 cursor: pointer;
-                                // box-shadow: 0px 0px 0px 1.5px #333,
-                                //     0px 1px 0px 1.5px #333,
-                                //     0px 2px 0px 0px #000;
+                                box-shadow: 0px 0px 0px 1.5px #333,
+                                    0px 1px 0px 1.5px #333,
+                                    0px 2px 0px 0px #000;
                             }
-                            .btn:hover{
-                                border: 1px solid #404040;
+
+                            .step-btn:hover {
+                                background-color: #2a2a2a;
+                            }
+
+                            .btn-container {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                column-gap: .7em;
+
+                                .btn {
+                                    font-size: 1.2rem;
+                                    font-weight: 600;
+                                    background-color: transparent;
+                                    color: #404040;
+                                    border: 1px solid transparent;
+                                    border-radius: .6em;
+                                    padding: .5em .8em;
+                                    cursor: pointer;
+                                }
+
+                                .btn:hover {
+                                    background-color: #E7E7E7;
+                                    outline: .15em solid #2B2B2B;
+                                    transition: 100ms ease-in-out;
+                                }
                             }
                         }
                     }

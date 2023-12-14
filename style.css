@@ -181,35 +181,44 @@ body main .main-container .options {
 }
 body main .main-container .options ul {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
-  row-gap: 2em;
 }
 body main .main-container .options ul .steps {
-  background-color: #f1f1f1;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  row-gap: 2em;
   padding: 2em 1.4em;
   border-radius: 0.8em;
+  cursor: pointer;
+  row-gap: 2em;
+  transition: 0.2s;
 }
-body main .main-container .options ul .steps b {
+body main .main-container .options ul .steps b.title {
   font-size: 1.3rem;
 }
-body main .main-container .options ul .steps p {
+body main .main-container .options ul .steps .para-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+  row-gap: inherit;
+}
+body main .main-container .options ul .steps .para-btn p {
   color: #616161;
   font-size: 1.3rem;
   width: 70%;
   line-height: 1.7em;
   font-weight: 500;
 }
-body main .main-container .options ul .steps p a {
+body main .main-container .options ul .steps .para-btn p a {
   text-decoration: none;
   color: #005BD3;
 }
-body main .main-container .options ul .steps .step-btn {
+body main .main-container .options ul .steps .para-btn .step-btn {
   font-size: 1.2rem;
   font-weight: 600;
   background-color: #404040;
@@ -220,17 +229,17 @@ body main .main-container .options ul .steps .step-btn {
   cursor: pointer;
   box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
 }
-body main .main-container .options ul .steps .step-btn:hover {
+body main .main-container .options ul .steps .para-btn .step-btn:hover {
   background-color: #2a2a2a;
 }
-body main .main-container .options ul .steps .btn-container {
+body main .main-container .options ul .steps .para-btn .btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
   -moz-column-gap: 0.7em;
        column-gap: 0.7em;
 }
-body main .main-container .options ul .steps .btn-container .btn {
+body main .main-container .options ul .steps .para-btn .btn-container .btn {
   font-size: 1.2rem;
   font-weight: 600;
   background-color: transparent;
@@ -240,6 +249,77 @@ body main .main-container .options ul .steps .btn-container .btn {
   padding: 0.5em 0.8em;
   cursor: pointer;
 }
-body main .main-container .options ul .steps .btn-container .btn:hover {
-  border: 1px solid #404040;
+body main .main-container .options ul .steps .para-btn .btn-container .btn:hover {
+  background-color: #E7E7E7;
+  outline: 0.15em solid #2B2B2B;
+  transition: 100ms ease-in-out;
+}
+body main .main-container .options ul .active {
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2em 1.4em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  row-gap: 2em;
+  transition: 0.2s;
+}
+body main .main-container .options ul .active b.title {
+  font-size: 1.3rem;
+}
+body main .main-container .options ul .active .para-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+  row-gap: inherit;
+}
+body main .main-container .options ul .active .para-btn p {
+  color: #616161;
+  font-size: 1.3rem;
+  width: 70%;
+  line-height: 1.7em;
+  font-weight: 500;
+}
+body main .main-container .options ul .active .para-btn p a {
+  text-decoration: none;
+  color: #005BD3;
+}
+body main .main-container .options ul .active .para-btn .step-btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #404040;
+  color: white;
+  border: none;
+  border-radius: 0.6em;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
+}
+body main .main-container .options ul .active .para-btn .step-btn:hover {
+  background-color: #2a2a2a;
+}
+body main .main-container .options ul .active .para-btn .btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 0.7em;
+       column-gap: 0.7em;
+}
+body main .main-container .options ul .active .para-btn .btn-container .btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: #404040;
+  border: 1px solid transparent;
+  border-radius: 0.6em;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+}
+body main .main-container .options ul .active .para-btn .btn-container .btn:hover {
+  background-color: #E7E7E7;
+  outline: 0.15em solid #2B2B2B;
+  transition: 100ms ease-in-out;
 }/*# sourceMappingURL=style.css.map */

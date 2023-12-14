@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            /* Define default styles for the cards */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card.active {
+            /* Define styles for the active (popped out) card */
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html">HOME</a>
+    <div class="card" onclick="toggleCard(this)">
+        <!-- Card content -->
+        CARD 1
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <!-- Another card content -->
+        CARD 2
+    </div>
+    <!-- Add more cards as needed -->
+
+
+    <script>
+        function toggleCard(card) {
+            // Toggle the 'active' class for the clicked card
+            card.classList.toggle('active');
+
+            // Loop through all cards to deactivate other active cards
+            const allCards = document.querySelectorAll('.card');
+            allCards.forEach((c) => {
+                if (c !== card && c.classList.contains('active')) {
+                    c.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
