@@ -340,7 +340,7 @@ body {
     body {
         nav {
             .nav-container {
-                
+
                 .logo {
                     width: 25%;
 
@@ -446,23 +446,33 @@ body {
                         line-height: 1.6em;
                     }
 
-                    button.select {
-                        font-size: clamp(.81rem, 1vw, 1.2rem);
-                        padding: .8em 1em;
-                        border-radius: .8em;
-                        font-weight: 600;
-                        cursor: pointer;
-                        background-color: white;
-                        transition: .2s;
-                        box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+                    .btn-container {
+                        width: 25%;
+                        display: flex;
+                        justify-content: space-around;
+                        // border: 1px solid red;
+
+                        button.select {
+                            font-size: clamp(.81rem, 1vw, 1.2rem);
+                            padding: .8em 1em;
+                            border-radius: .8em;
+                            font-weight: 600;
+                            cursor: pointer;
+                            background-color: white;
+                            transition: .2s;
+                            box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+                        }
+
+                        button.select:hover {
+                            background-color: #f1f1f1;
+                            transform: translateY(-0.1rem);
+                        }
                     }
 
-                    button.select:hover {
-                        background-color: #f1f1f1;
-                        transform: translateY(-0.1rem);
-                    }
+                    .close-cont {
+                        position: relative;
 
-                    .close-cont {}
+                    }
                 }
             }
 
@@ -489,7 +499,7 @@ body {
                     margin-bottom: 2em;
 
                     b,
-                    span{
+                    span {
                         line-height: 1.5em;
                         font-size: clamp(1.6rem, 1.3vw, 2.4rem);
                     }
@@ -502,13 +512,13 @@ body {
                 }
 
                 .options {
-                    
+
                     ul {
-                        
+
                         .steps {
                             padding: 2em 1.4em;
-                            
-                            
+
+
                             b.title {
                                 font-size: clamp(1rem, 1.6vw, 1.8rem);
                             }
