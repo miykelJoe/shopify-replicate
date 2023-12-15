@@ -324,7 +324,7 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
     border: none;
     outline: none;
     color: #B5B5B5;
-    font-size: clamp(1.4rem, 2vw, 2.5rem);
+    font-size: clamp(1rem, 1.6vw, 2rem);
   }
   body nav .nav-container .input-container:hover {
     border-color: white;
