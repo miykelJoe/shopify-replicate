@@ -339,6 +339,7 @@ body {
 
     body {
         nav {
+            padding: 1.5em 0;
             .nav-container {
 
                 .logo {
@@ -355,14 +356,14 @@ body {
                 }
 
                 .input-container {
-                    width: 45%;
+                    width: 40%;
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
                     background-color: var(--input-bgcolor);
                     border: 1px solid #616161;
                     border-radius: 1rem;
-                    padding: .9em 0;
+                    padding: .2em 0;
                     gap: 1em;
                     transition: .2s;
 
@@ -420,7 +421,7 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2.5em 0;
+            padding: 2em 0;
             width: 60%;
 
             aside {

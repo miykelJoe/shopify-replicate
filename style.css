@@ -290,6 +290,9 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
 }
 
 @media (min-width: 600px) {
+  body nav {
+    padding: 1.5em 0;
+  }
   body nav .nav-container .logo {
     width: 25%;
   }
@@ -301,14 +304,14 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
     width: 10em;
   }
   body nav .nav-container .input-container {
-    width: 45%;
+    width: 40%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     background-color: var(--input-bgcolor);
     border: 1px solid #616161;
     border-radius: 1rem;
-    padding: 0.9em 0;
+    padding: 0.2em 0;
     gap: 1em;
     transition: 0.2s;
   }
@@ -356,7 +359,7 @@ body main .main-container .options ul .active .para-btn .btn-container .btn:hove
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2.5em 0;
+    padding: 2em 0;
     width: 60%;
   }
   body main aside {
